@@ -1,0 +1,17 @@
+redux helps to make the data in organise way basically for state management 
+alt. for this is zustand
+different types of redux is react redux and reduxtookit(RTK)
+
+
+
+these are the steps to be followed while talking about cnotext api:-
+import React from "react";
+const UserContext = React.createContext();
+export default UserContext; 
+
+
+
+## project 08 is not working tried alot to debugg but no 
+
+
+for theme switcher in react you have to go to tailwind config to intergrate the dark themer so that u can use it 

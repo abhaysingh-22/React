@@ -6,11 +6,15 @@ function Login() {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
 
-    const {setUser} = useContext(UserContext)
+    const {User, setUser} = useContext(UserContext)
+    console.log(User)
 
     const handSubmit = (e) => {
         e.preventDefault()
-        setUser({username, password})
+        const user = {username, password}
+        setUser((prevUser) => [...prevUser, user])
+        setUsername('')
+        setPassword('')
     }
     return (
         <>
@@ -19,13 +23,17 @@ function Login() {
             <input type="text"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            placeholder='username' />
+            placeholder='username' 
+            />
             <input type="text" 
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            placeholder='password' />
+            placeholder='password' 
+            />
             <button onClick={handSubmit}>Submit</button>
         </div>
+
+        <div style={{marginBottom: "10px", marginTop: '10px', display: 'flex',  width: '50%'}} > {JSON.stringify(User)} </div>
         </>
     )
 }

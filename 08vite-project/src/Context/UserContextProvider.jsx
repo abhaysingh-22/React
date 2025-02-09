@@ -2,9 +2,16 @@ import React from "react";
 import UserContext from "./UserContext";
 
 const UserContextProvider = ({children}) => {
-    const [user, setUser] = React.useState(null)
+    const [User, setUser] = React.useState(() => {
+        const user = localStorage.getItem('user')
+        return user ? JSON.parse(user) : []
+    })
+
+    React.useEffect(() => {
+        localStorage.setItem('user', JSON.stringify(User))
+    }, [User])
     return(
-        <UserContext.Provider value = {{user, setUser}}>
+        <UserContext.Provider value = {{User, setUser}}>
         {children}
         </UserContext.Provider>
     )

@@ -5,13 +5,13 @@ import UserContextProvider from "./Context/UserContextProvider";
 import "./App.css";
 
 function App() {
-
-  return 
-  <UserContextProvider>
-    <h1>react AUR CHAI </h1>
+  return(
+  <>
+    <h1>Abhay</h1>
     <Login />
     <Profile />
-  </UserContextProvider>;
+  </>
+  )
 }
 
 export default App;
